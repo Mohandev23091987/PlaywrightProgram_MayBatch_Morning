@@ -1,34 +1,17 @@
+import { test } from '@playwright/test';
 
-import {test,expect, chromium}  from '@playwright/test';
+test('maximize browser window', async ({ page, context }) => {
+  const session = await context.newCDPSession(page);
 
-test("First test case",async({page})=>{
+  const { windowId } = await session.send('Browser.getWindowForTarget');
 
-// let browser =await chromium.launch({
-//     headless: false,
-//     args: ['--start-maximized']
-//   });
-// let browserContext =await browser.newContext({
-//     viewport: null,
-//     deviceScaleFactor: undefined
-//   });
-// let page= await browserContext.newPage();
-await page.goto("https://playwright.dev/");
-// await page.setViewportSize({
-//     width: 1920,
-//     height: 1080
-//   });
-await page.title()
-console.log("testing");
-console.log("testing");
+  await session.send('Browser.setWindowBounds', {
+    windowId,
+    bounds: {
+      windowState: 'maximized'
+    }
+  });
 
-
-})
-
-// test("second test case",()=>{
-
-// })
-
-// test("Third test case",()=>{
-
-// })
-
+  await page.goto('https://demoqa.com');
+  await page.waitForTimeout(3000);
+});
