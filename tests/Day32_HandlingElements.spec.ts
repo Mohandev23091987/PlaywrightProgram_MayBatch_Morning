@@ -18,6 +18,15 @@ await page.getByLabel('Password',{exact:true}).clear()
 await page.getByLabel('Password',{exact:true}).fill('Laxman')
 console.log(await page.getByLabel('Password',{exact:true}).inputValue())
 
+await page.getByLabel('Password',{exact:true}).waitFor({
+    state:'visible',
+    timeout:10000
+})
+
+await expect(page.getByLabel('Password',{exact:true})).toBeVisible({
+timeout:4000
+});
+
 /*
 operations on Checkboxes:
 
@@ -95,6 +104,13 @@ Assertion methods
 await page.getByRole('radio',{name:'Blue'}).check();
 
 
+
+
+////button[text()='Click Me']
+
+//await page.getByText('Click Me',{exact:true})
+
+//await page.getByRole('button',{name:'Click Me',exact:true})
 
 
 
