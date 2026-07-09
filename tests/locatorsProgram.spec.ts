@@ -7,6 +7,9 @@ test('has title', async ({ page }) => {
     height: 1080
   });
 
+
+
+  
   await page.getByRole('radio',{name:'Male',exact:true}).click();
   
 });

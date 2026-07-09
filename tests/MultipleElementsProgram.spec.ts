@@ -72,8 +72,5 @@ expect(actual).toBe(expected);
 
 
 
-await expect(page.locator('#country')).
-
-
 
 })

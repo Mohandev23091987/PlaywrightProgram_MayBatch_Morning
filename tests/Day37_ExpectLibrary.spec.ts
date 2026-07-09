@@ -4,7 +4,10 @@
 
 import {expect,test} from '@playwright/test'
 
-test("@P1 @Regression Expect Library methods",async({page})=>{
+
+
+test("@login @P1 @Regression Expect Library methods",async({page})=>{
+
 await page.goto("https://practice-automation.com/form-fields/");
 
 /*
@@ -14,7 +17,8 @@ expected value vs actual value
 1)Locator Assertions => which is applied on Locators 
 2)Page assertions => which is applied on page 
 3)Generic value assertions 
-4)APi assertions => which is applied on api responses 
+4)Negative assertions
+5)APi assertions => which is applied on api responses 
 */
 
 //Locator assertion 
@@ -35,6 +39,9 @@ await expect(page.getByRole('checkbox',{name:'Water'})).toBeChecked();
 
 
 //toHaveText > checks for extact text
+
+//single => id, name, text , placeholder 
+//group of element => class ,type, role ,tagname
 
 await expect(page.locator('#submit-btn')).toHaveText('Submit');
 
@@ -131,16 +138,39 @@ a=100;
 
 expect(a).toBeGreaterThan(70);
 
+let str='12345';
+
+expect(/^\d+$/.test(str)).toBeTruthy();
+
+
 
 //API Assertions
 //Negative Assertions
 
 //Hard Assetions
-
 //soft Assertions 
 
+//Synchronization
+
+// Running command line 
+//analysis resutls
 
 
+//Elements
+
+
+
+//  expect(page/locator/value).method();
+
+//palywrigh=> ok 
+
+// catch the opou => get the text =>expect 
+
+
+//running through command lines 
+
+//modular programming + data driven 
+//
 
 
 

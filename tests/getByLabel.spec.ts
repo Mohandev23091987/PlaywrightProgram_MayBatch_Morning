@@ -15,7 +15,7 @@
 
 import {expect,test} from '@playwright/test'
 
-test("GetRoleProgram",async({page})=>{
+test("GetRoleProgram ",{tag:['@login','@P1']},async({page})=>{
 
 
 await page.goto("https://testautomationpractice.blogspot.com/p/playwrightpractice.html");

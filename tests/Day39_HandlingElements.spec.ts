@@ -4,7 +4,7 @@
 
 import {expect,test} from '@playwright/test'
 
-test("handling elements @P1 @Regressions",async({page})=>{
+test("handling elements @P1 @Login",async({page,browser,context})=>{
 
 
 await page.goto("https://practice-automation.com/form-fields/");
@@ -119,7 +119,12 @@ await page.getByRole('radio',{name:'Blue'}).check();
 
 
 
+test("loign tet  @p1 @regression",({page})=>{
 
+    
+
+
+})
 
 
 
