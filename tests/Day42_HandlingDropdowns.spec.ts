@@ -9,6 +9,7 @@ test.setTimeout(2*60*1000)
 // identify a dropdown 
 //select option 
 
+//select => options its called normal dropdown
 
 let countryDropDown = page.locator('#country');
 
