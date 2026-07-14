@@ -1,20 +1,19 @@
 import {expect,test} from '@playwright/test'
 
 
-
+test.describe('all dropdown tests',()=>{
 test('handling multi select drown',async ({page})=>{
 await page.goto('https://testautomationpractice.blogspot.com/');
 //multi select dropdown 
 let multiSelectDropdown = page.locator('#colors');
 await multiSelectDropdown.selectOption(['Red','Yellow']);
-
 //validations
 })
 
-//BootStrap dropdown
+
 
 test('handling bootstrap down',async ({page})=>{
-
+//BootStrap dropdown
 //identify dropdown click on it 
 // identify opotoin click on it 
 
@@ -75,6 +74,10 @@ await page.locator('textarea[name="q"]').fill('Playwright')
 await page.locator('ul[role="listbox"]>li span',{hasText:'playwright automation'}).click()
 
 })
+})
+
+
+
 
 
 
