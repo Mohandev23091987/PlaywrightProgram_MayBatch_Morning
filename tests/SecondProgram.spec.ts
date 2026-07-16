@@ -34,5 +34,11 @@ test("destructing",()=>{
   console.log(name);
    console.log(course);
 
+    let numbers = [1,2,3]
+
+//in arrays 
+//in objects
+    
+
 
 })
