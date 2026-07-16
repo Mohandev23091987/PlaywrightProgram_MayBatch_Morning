@@ -212,7 +212,7 @@ test('Multiple Files upload ',async ({page})=>{
 })
 
 
-test('using pagePromise',async ({context,page})=>{
+test('without using promise.all',async ({context,page})=>{
 
 //   let browser = await chromium.launch();
 //   let context = await browser.newContext();
@@ -221,11 +221,12 @@ test('using pagePromise',async ({context,page})=>{
   await page.goto('https://testautomationpractice.blogspot.com/')
 
 
-  let newPage = page.waitForEvent('popup')
+  let newPagePromise = page.waitForEvent('popup')
   await page.getByRole('button',{name:'New Tab'}).click()
 
-  
- 
+  let newPage = await newPagePromise
+  newPage.waitForLoadState()
+  console.log(await newPage.title())
 })
 
 
