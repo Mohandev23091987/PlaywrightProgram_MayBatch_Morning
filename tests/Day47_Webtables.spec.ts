@@ -117,7 +117,15 @@ let priceofProduct = await page.locator('#productTable>tbody tr',{hasText:'Smart
 
 console.log(priceofProduct)
 
+//============================================
+console.log("printing through array ")
 
+let alloptionElements = await page.locator('#country option').all();
+
+for(let option of alloptionElements){
+
+    console.log(await option.innerText())
+}
 
 
 })
